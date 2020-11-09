@@ -1,0 +1,41 @@
+{% extends 'home/layout.html' %}
+
+
+{%block board%}
+<table id="board" border="1" cellpadding="7" cellspacing="0">
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>날짜/시간</th>
+    </tr>
+    {% for bo in boardList reversed %}
+    <tr class="boardRow">
+        <td class="boardIdx">{{bo.idx}}</td>
+        <td class="boardTitle">
+            <a href="/board/notice/{{bo.idx}}/">{{bo.title}}</a>
+        </td>
+        <td class="boardWriter">{{bo.writer}}</td>
+        <td class="boardDate">{{bo.datetime|date:'Y-m-d h:i'}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div class="menuBar">
+    <div class="menu left">
+        <form method="POST"> {% csrf_token%}
+            <select name="searchType">
+                <option value="title">제목으로 검색 (포함)</option>
+                <option value="writer">작성자로 검색 (일치)</option>
+                <option value="content">내용으로 검색 (포함)</option>
+            </select>
+            <input name="searchWord">
+            <input type="submit" value="검색">
+        </form>
+    </div>
+    <div class="menu right">
+        <a href="/board/write/">
+            <button class="newwrite">새 글 쓰기</button>
+        </a>
+    </div>
+</div>
+{%endblock%}

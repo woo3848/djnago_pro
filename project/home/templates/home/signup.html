@@ -1,0 +1,53 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <form method="POST">
+        {%csrf_token%}
+  <div id="header">
+      <a href="/"><img id="h_logo" src="{%static 'img/log.JPG'%}" width="240;" height="58px;" ></a>
+  </div>
+    <div id="main">
+        <div class="join_group">
+            <div class="id">
+                <h3 class="join_tittle"><label>아이디</label></h3>
+                <span class="ps_box"><input type="text" name="userid" id="id_int" placeholder="ID" autofocus autocomplete="off">
+                </span>
+            </div>
+            <div class="passwd">
+                <h3 class="join_tittle"><label>비밀번호</label></h3>
+                <span class="ps_box int_pass"><input type="password" name="userpw"class="int" placeholder="Password" autocomplete="off"></span>
+            </div>
+        </div>
+        <div class="join_group">
+            <div class="name">
+                <h3 class="join_tittle"><label>이름</label></h3>
+                <span class="ps_box right_space"><input type="text" name="name"class="int" autocomplete="off"></span>
+            </div>
+            </div>
+            <div class="join_group">
+            <div class="year">
+                <h3 class="join_tittle"><label>생년월일</label></h3>
+                <span class="ps_box right_space"><input type="text" name="birth"class="int" autocomplete="off" placeholder="생년월일(6자)"></span>
+            </div>
+          
+                    
+            <div class="join_mobile">
+                <h3 class="join_tittle">휴대전화</h3>
+                    <span class="ps_box right_space"><input type="text" name="phonenum"class="int" autocomplete="off" placeholder="휴대전화 번호 입력"></span>
+                </div>
+                <div class="btn_area">
+                    <button type="submit" id="btnJoin" class="btn_type btn_primary">가입하기</button>
+                </div>
+                 
+        </div>
+              
+    </form>
+     </body>
+</html>

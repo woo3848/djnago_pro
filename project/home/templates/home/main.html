@@ -1,0 +1,112 @@
+{% extends 'home/layout.html' %}
+{%load static %}
+
+
+{%block board%}
+<div class="mvname">영화</div>
+<div class="line">
+    <div class="mvimg">
+    <video width="295px" height="167px"  onmouseover="this.play()" onmouseout="this.pause()" 
+        autobuffer="true" muted  src="{% static 'mp4/반도.mp4' %}" preload="none"poster="{% static 'img/K-010.jpg' %}">  
+    </video></div> 
+    <a href="video/"><div class="mvimg">
+        <video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" autobuffer="true" 
+        muted src="{%static 'mp4/영웅.mp4'%}" poster="{%static 'img/K-016.jpg' %}" preload="none">
+    </video></a></div>
+    <div class="mvimg">
+        <video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        autobuffer="true" muted src="{%static 'mp4/살아있다.mp4'%}" poster="{%static 'img/K-014.jpg' %}">
+    </video></div>
+    <div class="mvimg"><video width="295px" height="167px" onmouseover="this.play()"  preload="none"
+        onmouseout="this.pause()" muted autobuffer="true" src="{%static 'mp4/담보.mp4'%}" poster="{%static 'img/K-009.jpg'%}">
+    </video></div>
+    <div class="mvimg"><video width="295px" height="167px" onmouseover="this.play()"  preload="none"
+        onmouseout="this.pause()" muted autobuffer="true" src="{%static 'mp4/나의 특별한 형제.mp4'%}" poster="{%static 'img/K-024.jpg' %}">
+    </video></div>
+    <div class="mvimg">
+        <video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/서복.mp4'%}" poster="{%static 'img/K-021.jpg' %}">
+        </video>
+    </div>
+</div>
+<div class="line2">
+<div class="mvname">드라마</div>
+<div class="line">
+    <div class="mvimg"><video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/경우의수.mp4'%}" poster="{%static 'img/K-039.jpg' %}">
+        </video>
+    </div>
+    <a href="video/">
+    <div class="mvimg"><video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/구미호뎐.mp4'%}" poster="{%static 'img/K-038.jpg' %}">
+        </video></a></div>
+    <div class="mvimg">
+        <video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/청춘기록.mp4'%}" poster="{%static 'img/K-043.jpg' %}">
+        </video>
+    </div>
+    <div class="mvimg">
+        <video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/스타트업.mp4'%}" poster="{%static 'img/K-045.jpg' %}">
+        </video>
+    </div>
+    <div class="mvimg">
+        <video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/팬트하우스.mp4'%}" poster="{%static 'img/K-047.jpg' %}">
+        </video>
+    </div>
+    <div class="mvimg"><video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/비밀의남자.mp4'%}" poster="{%static 'img/K-048.jpg' %}">
+        </video></div>
+</div>
+</div>
+<div class="line3">
+<div class="mvname">예능</div>
+<div class="line">
+    <div class="mvimg"><video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/골목식당.mp4'%}" poster="{%static 'img/K-049.jpg' %}">
+        </video></div>
+    <div class="mvimg">
+        <video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/1박2일.mp4'%}" poster="{%static 'img/K-051.jpg' %}">
+        </video>
+    </div>
+    <div class="mvimg">
+        <video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/무한도전.mp4'%}" poster="{%static 'img/K-055.jpg' %}">
+        </video>
+    </div>
+    <div class="mvimg"><video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/신서유기.mp4'%}" poster="{%static 'img/K-056.jpg' %}">
+        </video></div>
+    <div class="mvimg"><video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/나혼자산다.mp4'%}" poster="{%static 'img/K-064.jpg' %}">
+        </video></div>
+    <div class="mvimg"><video width="295px" height="167px" onmouseover="this.play()" onmouseout="this.pause()" preload="none"
+        muted autobuffer="true" src="{%static 'mp4/아는형님.mp4'%}" poster="{%static 'img/K-066.jpg' %}">
+        </video></div>
+</div>
+</div>
+<div class="line4">
+<div class="mvname">시사</div>
+<div class="line">
+    <div class="mvimg">이미지1</div>
+    <div class="mvimg">이미지2</div>
+    <div class="mvimg">이미지3</div>
+    <div class="mvimg">이미지4</div>
+    <div class="mvimg">이미지5</div>
+    <div class="mvimg">이미지6</div>
+</div>
+</div>
+<div class="line5">
+<div class="mvname">애니메이션</div>
+<div class="line">
+    <div class="mvimg">이미지1</div>
+    <div class="mvimg">이미지2</div>
+    <div class="mvimg">이미지3</div>
+    <div class="mvimg">이미지4</div>
+    <div class="mvimg">이미지5</div>
+    <div class="mvimg">이미지6</div>
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,40 @@
+{% extends 'home/layout.html' %}
+
+
+{%block board%}
+<form method="POST"> {% csrf_token %}
+    <table id="board">
+        <tr>
+            <td class="boardTitle">
+                <input class="inputTitle" required autocomplete="off"
+                type="text" name="title" placeholder="제목">
+            </td>
+            <td class="boardWriter">
+                <input class="inputWrite" autocomplete="off"
+                type="text" name="writer" placeholder="작성자">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" class="readContent">
+                <textarea class="input content" autocomplete="off"
+                name="content" placeholder="내용을 작성하세요"></textarea>
+                <!--<textarea>는 여는태그와 닫느태그의 중간에 내용을 입력을 하기 때문에 붙혀서 사용한다-->
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="menuBar" style="margin: auto;">
+                    <div class="menu left">
+                        <a href="/">
+                            <input type="button" value="돌아가기">
+                        </a>
+                    </div>
+                    <div class="menu right">
+                        <input type="submit" value="작성완료">
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </form>
+{%endblock%}

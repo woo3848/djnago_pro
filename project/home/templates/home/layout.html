@@ -1,0 +1,235 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPLEX</title>
+    <style>
+      
+body,header, nav, main{
+    padding:0;
+    margin:0;
+}
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+ 
+}
+img#logo{
+    height: 56px;
+    width:200px;
+    padding-left: 20px;
+}
+nav{
+    display:flex;
+    height: 60px;
+    width: 100%;
+    background-color:  #7FAEEF;
+}
+div.logo{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+span.menu{
+    position: relative;
+    padding-right: 20px;
+}
+a{
+    color:black;
+    font-size:12pt;
+    text-decoration: none;
+}
+a#gide{
+    font-size:14pt;
+}
+a:link{
+    color:black;
+}
+button{
+    float:right;
+    background-color: white;
+    border:none;
+    font-weight: 15pt;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+li {
+
+    font-size: 18px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative; 
+}
+
+main{
+    margin-left: 50px;
+    margin-right:50px;
+}
+
+div.mvname{
+    margin-top:20px;
+    font-size:20pt;
+    font-weight: bolder;
+}
+
+div.line{
+    white-space:nowrap;
+    margin-top:20px;
+}
+
+div.mvimg{
+    display:inline-flex;
+    flex-wrap: nowrap;
+    width:293px;
+    height: 165px;
+}
+
+/* index.html */
+main {
+    height: 700px;
+    justify-content: space-around;
+    flex-flow: column;
+}
+    main #board{
+    width: 1300px;
+    background-color: white;
+    border: 0;
+    border-collapse: collapse;
+    margin: auto;
+    max-height: 500px;
+}
+
+table{
+    border:1px solid black;
+}
+td.boardWriter td.boardDate{
+    text-align: center;
+}
+    #board td {
+        text-align: center;
+        border:0;
+       
+    }
+
+    #board th {
+        border: 0;
+    }
+
+    main .boardTitle{
+        width: 70%;
+        text-align: left;
+        padding-left: 20px;
+        font-weight: bolder;
+    }
+    #board .boardRow:hover{
+        background-color: seashell;
+    }
+
+    .boardWriter .boardDate{
+        text-align: center;
+    }
+
+    #board .boardTitle {
+        width : 70%;
+        text-align: left;
+        padding-left: 20px;
+        font-weight: bolder;
+    }
+    #board .boardTitle a {
+        display : block;
+    }
+    #board td.readContent {
+        width: 100%;
+        border: 0;
+        border-bottom: 0;
+        height: 550px;
+        text-align: left;
+        padding: 10px;
+    }
+    pre {
+        text-align: left;
+        height: 450px;
+    }
+    div.menuBar {
+        padding-top:50px;
+        margin:auto;
+        width: 1200px;
+        display: flex;
+        justify-content: space-between; 
+    }
+
+    .input {
+        font-size: 12pt;
+        border: 0;
+        border-bottom: 2px solid #dadada;
+    }
+    input.title {
+        width: 800px;
+    }
+    textarea.content {
+        display: block;
+        margin: auto;
+        width: 1100px;
+        height: 400px;
+        /* textarea를 마음대로 크기조절 하지 못하게 */
+        resize: none;
+        padding: 10px;
+    }
+
+    select{
+        border:0;
+        
+    }
+
+
+    button.newwrite{
+        font-size:13pt;
+        font-weight: bolder;
+    }
+</style>
+</head>
+</head>
+<body>
+    <header> 
+        <div class="logo"><a href="/"><img id="logo" src="{%static 'img/log.JPG'%}"></a>
+        </div>
+            <span class="menu">  
+            {% if request.session.login_userid != None %}
+            {{request.session.login_userid}}님
+            <button type="submit"><a href="/logout/">로그아웃</a></button>
+            {%else%}
+            <button class="main Sin"> <a href="signup/">회원가입</a></button>
+            <button class="main Login"><a href="login/">로그인</a></button> 
+            {% endif %}
+        
+        </header>
+        <nav>
+            <ul>
+                <li>영화</li>
+                <li>드라마</li>
+                <li>예능</li>
+                <li>애니메이션</li>
+                <li>시사</li>
+                {% if request.session.login_userid != None %}
+                <li><a id="gide" href="/board/index/">게시판</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+   
+        <main>{% block board%}{%endblock%}</main>
+</body>
+</html>
